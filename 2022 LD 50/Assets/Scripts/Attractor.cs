@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour
 {
-
+    
+    public float gravityScale;
     bool isDraggable;
     bool isDragging;
     Collider2D objectCollider;
@@ -87,7 +88,7 @@ public class Attractor : MonoBehaviour
         float distance = direction.magnitude;
 
         float forceMagnitude = (rb.mass * rbToAttract.mass);
-        Vector2 force = direction.normalized * forceMagnitude;
+        Vector2 force = direction.normalized * forceMagnitude * gravityScale;
 
         rbToAttract.AddForce(force);
 
