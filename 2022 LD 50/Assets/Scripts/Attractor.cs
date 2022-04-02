@@ -7,6 +7,8 @@ public class Attractor : MonoBehaviour
 
     bool isDraggable;
     bool isDragging;
+    Vector3 launchVector;
+    Vector3 mousePosition;
     Collider2D objectCollider;
 
     public Rigidbody2D rb;
@@ -26,6 +28,10 @@ public class Attractor : MonoBehaviour
     {
 
         DragAndDrop();
+
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        launchVector = mousePosition - this.transform.position;
+        Debug.DrawRay(this.transform.position, new Vector3(1, 1, 1), Color.green);
 
     }
 
@@ -48,7 +54,9 @@ public class Attractor : MonoBehaviour
 
     void DragAndDrop(){
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // if its dragging,
+        // track mouse position and thingy position
+        // on release, add launchvector
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -68,13 +76,18 @@ public class Attractor : MonoBehaviour
         }
         if (isDragging)
         {
-            this.transform.position = mousePosition;
+            Debug.DrawRay(this.transform.position, launchVector, Color.green);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            isDraggable = false;
-            isDragging = false;
+            if (isDraggable == true && isDragging == true)
+            {
+                isDraggable = false;
+                isDragging = false;
+            
+                rb.AddForce(new Vector3(launchVector.x, launchVector.y, 0)*15, ForceMode2D.Impulse);
+            }
         }
     }
 
