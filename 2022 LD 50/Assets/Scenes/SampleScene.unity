@@ -226,11 +226,52 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &237551458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237551456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9b4bfee936e414aa86a39aa4b46e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 237551462}
+  objectCollider: {fileID: 237551463}
+  planetRender: {fileID: 237551460}
+  resources: {fileID: 237551464}
+  isMainPlanet: 0
+--- !u!212 &237551460 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 395191893725522793, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+  m_PrefabInstance: {fileID: 395191893545329147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &237551462 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 395191893725522799, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
   m_PrefabInstance: {fileID: 395191893545329147}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &237551463 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 395191893725522795, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+  m_PrefabInstance: {fileID: 395191893545329147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &237551464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237551456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b50468f26ec2042a35efdd413da53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1141094497}
+  manager: {fileID: 237551458}
 --- !u!1 &322149532
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +712,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 395191893725522794, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1297500718}
+    - target: {fileID: 395191893725522794, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -786,11 +831,43 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 395191893725522804, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
   m_PrefabInstance: {fileID: 829415843}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1297500713 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 395191893725522799, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+  m_PrefabInstance: {fileID: 829415843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1297500714 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 395191893725522795, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+  m_PrefabInstance: {fileID: 829415843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1297500716 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 395191893725522793, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+  m_PrefabInstance: {fileID: 829415843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1297500717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 395191893725522792, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
   m_PrefabInstance: {fileID: 829415843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297500718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297500712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9b4bfee936e414aa86a39aa4b46e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1297500713}
+  objectCollider: {fileID: 1297500714}
+  planetRender: {fileID: 1297500716}
+  resources: {fileID: 0}
+  isMainPlanet: 1
 --- !u!1 &1347828468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1105,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1141094497}
+    - target: {fileID: 395191893725522794, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 237551458}
     - target: {fileID: 395191893725522794, guid: 0585f1f86324b0544912f0ab25cd8a8b, type: 3}
       propertyPath: m_Enabled
       value: 1
