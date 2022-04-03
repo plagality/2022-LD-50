@@ -20,11 +20,11 @@ public class PlanetManager : MonoBehaviour
         if(isMainPlanet) {
             mainPlanet = this.gameObject;
             Debug.Log("MAIN PLANET");
+            mainPRange = mainPlanet.transform.GetChild(0).gameObject.GetComponent<Collider2D>();
         }
 
         objectCollider = GetComponent<Collider2D>();
         planetRender = GetComponent<Renderer>();
-        mainPRange = mainPlanet.transform.GetChild(0).gameObject.GetComponent<Collider2D>();
 
         
         

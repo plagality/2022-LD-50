@@ -94,7 +94,7 @@ public class Attractor : MonoBehaviour
                 lr.SetPosition(0, Vector3.zero);
                 lr.SetPosition(1, Vector3.zero);
 
-                manager.rb.AddForce(new Vector3(launchVector.x, launchVector.y, 0)*15, ForceMode2D.Impulse);
+                manager.rb.AddForce(new Vector3(launchVector.x, launchVector.y, 0)*3, ForceMode2D.Impulse);
                 manager.resources.resource(Mathf.FloorToInt(-1*launchVector.magnitude));
             }
         }
@@ -108,7 +108,7 @@ public class Attractor : MonoBehaviour
         Vector2 direction = manager.rb.position - rbToAttract.position;
         float distance = direction.magnitude;
 
-        float forceMagnitude = (manager.rb.mass * rbToAttract.mass);
+        float forceMagnitude = (manager.rb.mass * rbToAttract.mass)/distance;
         Vector2 force = direction.normalized * forceMagnitude;
 
         rbToAttract.AddForce(force);

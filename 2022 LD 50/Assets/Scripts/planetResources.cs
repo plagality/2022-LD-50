@@ -25,7 +25,7 @@ public class planetResources : MonoBehaviour
     }
 
     void checkResourceRange() {
-        if(this != PlanetManager.mainPlanet) {
+        if(this.gameObject != PlanetManager.mainPlanet) {
             if(manager.objectCollider.IsTouching(PlanetManager.mainPRange)) {
                 Debug.Log("IN RANGE");
                 manager.planetRender.material.SetColor("_Color", Color.green);
@@ -38,7 +38,7 @@ public class planetResources : MonoBehaviour
                 Debug.Log("out");
             }
         } else {
-            Debug.Log("MAIN P LANET");
+            Debug.Log("MAIN PLANET");
         }
     }
 
