@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
@@ -10,15 +11,15 @@ public class StartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        startScreen.SetActive(true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit")) {
-            //LoadSceneAsync
+        if (Input.GetKeyDown(KeyCode.Return)){
+            Debug.Log("next sceneee");
+            SceneManager.LoadScene("Gameplay");
         }
     }
 }
