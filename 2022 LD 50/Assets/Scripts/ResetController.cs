@@ -27,9 +27,9 @@ public class ResetController : MonoBehaviour
         
         for (int i = 0; i < resetObjects.Length; i++){
             
-            //rb = resetObjects[i].GetComponent<Rigidbody2D>();
-            //rb.velocity = Vector2.zero;
-            //rb.angularVelocity = 0f;
+            rb = resetObjects[i].GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
 
             resetObjects[i].transform.position = new Vector3(resetLocations[i].position.x,
                                                              resetLocations[i].position.y,
