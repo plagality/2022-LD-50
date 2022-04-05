@@ -8,6 +8,12 @@ public class ResetController : MonoBehaviour
     public GameObject[] resetObjects;
     public Transform[] resetLocations;
 
+    public GameObject deathMessage;
+
+    public Animator star;
+
+    public GameObject ResourceManager;
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -37,5 +43,12 @@ public class ResetController : MonoBehaviour
 
 
 		}
+
+        star.Play("Death", -1, 0f);
+
+        ResourceManager.GetComponent<ResourceManager>().resources = 0f;
+
+        deathMessage.GetComponent<MessageController>().makeInvisible();
+
 	}
 }

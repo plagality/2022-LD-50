@@ -11,15 +11,15 @@ public class StartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        startScreen.SetActive(true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit")) {
-            SceneManager.LoadScene("Main");
+        if (Input.GetKeyDown(KeyCode.Return)){
+            Debug.Log("next sceneee");
+            SceneManager.LoadScene("Gameplay");
         }
     }
 }
